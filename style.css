@@ -1,0 +1,888 @@
+:root {
+  --primary: #1e5631;     /* Darker green */
+  --primary-light: #a7e3b9; 
+  --secondary: #e83e8c;   /* Pink */
+  --secondary-light: #f8d7e6;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --background: #ffffff;
+  --gray-light: #f8f8f8;
+  --gray-medium: #e0e0e0;
+  --transition: all 0.3s ease;
+  --blood-red: #e41b17;   /* Blood red color for the donation section */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-dark);
+  background: var(--background);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Section styling */
+section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary);
+  margin: 15px auto 0;
+}
+
+.section-tagline {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--background);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 15px 32px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: top 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 12px;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--primary);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+.navbar-links a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary);
+  transition: var(--transition);
+}
+
+.navbar-links a:hover {
+  color: var(--secondary);
+}
+
+.navbar-links a:hover:after {
+  width: 100%;
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* Hide nav by default after hero */
+.navbar.hide {
+  top: -80px;
+  opacity: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.hero-slide {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  transition: opacity 0.5s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-slide.active {
+  display: flex;
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 0 40px;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.hero-image img {
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 32px;
+  color: var(--text-dark);
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 15px rgba(232,62,140,0.2);
+  border: none;
+}
+
+.hero-button:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(30,86,49,0.25);
+}
+
+.hero-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 5;
+}
+
+.hero-nav-btn {
+  background: rgba(255,255,255,0.8);
+  border: none;
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.hero-nav-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.hero-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-dot.active {
+  background: var(--secondary);
+  transform: scale(1.3);
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--gray-light);
+  padding: 100px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.about-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.about-icon {
+  font-size: 2.5rem;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.about-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.about-card p {
+  color: var(--text-light);
+}
+
+/* Products Section */
+.products-section {
+  padding: 100px 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.product-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  padding: 20px 20px 10px;
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.product-card p {
+  padding: 0 20px 20px;
+  color: var(--text-light);
+}
+
+.product-link {
+  display: inline-block;
+  margin: 0 20px 20px;
+  color: var(--secondary);
+  font-weight: 500;
+  position: relative;
+}
+
+.product-link:after {
+  content: '→';
+  margin-left: 5px;
+  transition: var(--transition);
+}
+
+.product-link:hover:after {
+  margin-left: 10px;
+}
+
+/* Nutrition Section */
+.nutrition-section {
+  background: linear-gradient(135deg, #f9f9f9 0%, var(--primary-light) 100%);
+  padding: 100px 0;
+}
+
+.nutrition-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.nutrition-image {
+  flex: 1;
+}
+
+.nutrition-image img {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.nutrition-text {
+  flex: 1;
+}
+
+.nutrition-text h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.nutrition-text p {
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.nutrition-benefits {
+  margin-bottom: 30px;
+  list-style-position: inside;
+}
+
+.nutrition-benefits li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.nutrition-benefits li:before {
+  content: '✓';
+  color: var(--secondary);
+  position: absolute;
+  left: 0;
+}
+
+.text-button {
+  color: var(--secondary);
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--secondary);
+  transition: var(--transition);
+}
+
+.text-button:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Stories Section */
+.stories-section {
+  padding: 100px 0;
+}
+
+.stories-slider {
+  position: relative;
+  margin-bottom: 30px;
+  height: 350px;
+}
+
+.story {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.story.active {
+  display: flex;
+  opacity: 1;
+}
+
+.story-image {
+  flex: 1;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+
+.story-content {
+  flex: 1;
+  padding: 40px;
+  background: white;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.story-content p {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.story-author {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.stories-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stories-btn {
+  background: var(--gray-light);
+  border: none;
+  color: var(--primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.stories-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Blood donation section */
+.blood-donation-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--blood-red);
+  color: white;
+  padding: 50px;
+  overflow: hidden;
+}
+
+/* Text content */
+.donation-content {
+  flex: 0 1 45%;
+  padding-right: 30px;
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: lowercase;
+  line-height: 1;
+}
+
+.section-text {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* Blood droplet container */
+.blood-droplet-container {
+  flex: 0 1 55%;
+  position: relative;
+}
+
+/* Blood droplet shape with images */
+.blood-droplet {
+  position: relative;
+  width: 100%;
+  padding-bottom: 120%; /* For aspect ratio */
+  /* Droplet shape using clip-path */
+  clip-path: path('M50,0 C90,0 100,35 100,60 C100,100 75,100 50,120 C25,100 0,100 0,60 C0,35 10,0 50,0');
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Individual donor images */
+.donor-image {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.donor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.donor-image:hover img {
+  transform: scale(1.05);
+}
+
+.donor-image.featured {
+  z-index: 2;
+}
+
+/* Footer */
+.footer {
+  background: var(--primary);
+  color: white;
+}
+
+.footer-content {
+  display: flex;
+  padding: 70px 0;
+  gap: 50px;
+}
+
+.footer-brand {
+  flex: 1;
+}
+
+.footer-logo {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--secondary-light);
+}
+
+.footer-column a {
+  display: block;
+  color: white;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.footer-column a:hover {
+  opacity: 1;
+  color: var(--secondary-light);
+}
+
+.footer-social {
+  flex: 1;
+}
+
+.footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--secondary-light);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  background: var(--secondary);
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  background: rgba(0,0,0,0.1);
+  padding: 20px 0;
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-legal a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+.footer-legal a:hover {
+  color: var(--secondary-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .nutrition-content {
+    flex-direction: column;
+  }
+  
+  .story {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .story-image img {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .story-content {
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Blood donation section responsive */
+  .blood-donation-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .donation-content {
+    flex: 0 1 auto;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .blood-droplet-container {
+    flex: 0 1 auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    gap: 15px;
+    z-index: 99;
+  }
+  
+  .navbar-links.active {
+    display: flex;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .hero-slide {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .hero-content {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .footer-bottom .container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  /* Blood donation responsive */
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  .blood-droplet-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 60px 0;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .about-grid, .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
