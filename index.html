@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lorem Ipsum</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar-brand">
+      <a href="#hero" class="brand-link" id="logo-link">
+        <img src="logoo guspinova.png" alt="Logo" class="logo">
+        <span class="brand-title">guspinova</span>
+      </a>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="#about">Tentang</a>
+      <a href="#products">Produk</a>
+      <a href="#mascot">Maskot</a>
+      <a href="ingredient.html">Komposisi</a>
+      <a href="research.html">Penelitian</a>
+      <a href="#bmi-calculator">Kalkulator</a>
+      <a href="#contact">Kontak</a>
+    </div>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <section id="hero" class="hero">
+    <div class="hero-slider" id="hero-slider">
+      <div class="hero-slide active">
+        <div class="hero-content">
+          <h1>GUSPINOVA</h1>
+          <p>Satu gelas penuh gizi, dari alam untuk energi!</p>
+          <a href="#products" class="hero-button">Kenali Kami</a>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="hero-content">
+          <h1>GUSPINOVA</h1>
+          <p>Satu gelas penuh gizi, dari alam untuk energi!</p>
+          <a href="#about" class="hero-button">Kenali Kami</a>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="hero-content">
+          <h1>GUSPINOVA</h1>
+          <p>Satu gelas penuh gizi, dari alam untuk energi!</p>
+          <a href="#research" class="hero-button">Kenali Kami</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-controls">
+      <button class="hero-nav-btn" id="prev-slide"><i class="fas fa-chevron-left"></i></button>
+      <div class="hero-dots" id="hero-dots">
+        <span class="hero-dot active" data-slide="0"></span>
+        <span class="hero-dot" data-slide="1"></span>
+        <span class="hero-dot" data-slide="2"></span>
+      </div>
+      <button class="hero-nav-btn" id="next-slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- About section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>GUSPINOVA</h2>
+        <p class="section-tagline">Minuman sehat untuk kesehatan dan kesejahteraan Anda</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">
+            <i class="fas fa-weight"></i>
+          </div>
+          <h3>Menjaga Berat Badan</h3>
+          <p>
+            Membantu menjaga berat badan ideal dengan kandungan nutrisi yang seimbang dan rendah kalori
+            tanpa mengurangi asupan gizi penting untuk tubuh Anda.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>Kesehatan Jantung</h3>
+          <p>
+            Mengandung antioksidan alami yang membantu menjaga kesehatan jantung dan sistem peredaran darah
+            untuk mendukung gaya hidup aktif dan sehat.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Bahan Alami</h3>
+          <p>
+            Dibuat dari bahan-bahan organik pilihan yang dipanen secara berkelanjutan tanpa tambahan pengawet
+            atau pemanis buatan untuk kualitas terbaik.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products section -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Produk Kami</h2>
+        <p class="section-tagline">Rangkaian produk berkualitas tinggi untuk mendukung gaya hidup sehat</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1550026593-cb89847b168d?w=600&auto=format&fit=crop&q=80" alt="Product Image">
+          </div>
+          <h3>Serbuk Minuman</h3>
+          <p>Serbuk minuman organik dengan berbagai pilihan rasa yang kaya akan nutrisi dan antioksidan.</p>
+          <a href="#" class="product-link">Selengkapnya</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&auto=format&fit=crop&q=80" alt="Product Image">
+          </div>
+          <h3>Suplemen Harian</h3>
+          <p>Suplemen harian dalam bentuk tablet yang mudah dikonsumsi untuk memenuhi kebutuhan nutrisi Anda.</p>
+          <a href="#" class="product-link">Selengkapnya</a>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?w=600&auto=format&fit=crop&q=80" alt="Product Image">
+          </div>
+          <h3>Minuman Siap Saji</h3>
+          <p>Minuman praktis dalam kemasan yang dapat langsung dikonsumsi untuk energi sepanjang hari.</p>
+          <a href="#" class="product-link">Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mascot section -->
+  <section id="mascot" class="mascot-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kenalkan Maskot Kami</h2>
+        <p class="section-tagline">Wajah ramah dari merek kami</p>
+      </div>
+      
+      <div class="mascot-container">
+        <div class="mascot-image">
+          <!-- Replace the src with your actual image after saving it to the images folder -->
+          <img src="images/mascot1.jpg" alt="Product Mascot" class="mascot-main">
+        </div>
+        <div class="mascot-info">
+          <h3>Cerita Maskot Kami</h3>
+          <p>Maskot kami dirancang untuk mewakili nilai-nilai utama Guspinova: kealamian, kesegaran, dan energi. Dengan karakter yang ceria dan bersemangat, maskot ini menjadi simbol komitmen kami untuk menghadirkan produk berkualitas tinggi yang mendukung gaya hidup sehat.</p>
+          <div class="mascot-secondary">
+            <!-- Replace the src with your actual image after saving it to the images folder -->
+            <img src="images/mascot2.jpg" alt="Product Mascot Variant" class="mascot-sub">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BMI Calculator Section -->
+  <section id="bmi-calculator" class="bmi-calculator-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kalkulator Kesehatan</h2>
+        <p class="section-tagline">Hitung Indeks Massa Tubuh (BMI) Anda untuk memantau kesehatan</p>
+      </div>
+
+      <div class="bmi-container">
+        <div class="bmi-info">
+          <h3>Apa Itu BMI?</h3>
+          <p>Indeks Massa Tubuh (BMI) adalah alat pengukuran yang digunakan untuk menilai apakah seseorang memiliki berat badan yang sehat berdasarkan tinggi dan berat badannya.</p>
+          <p>BMI bukan pengukuran langsung terhadap lemak tubuh, tetapi penelitian menunjukkan korelasi antara BMI dan pengukuran lemak tubuh secara langsung.</p>
+          <div class="bmi-categories">
+            <h4>Kategori BMI:</h4>
+            <ul>
+              <li><span class="bmi-underweight">Berat Badan Kurang:</span> BMI kurang dari 18.5</li>
+              <li><span class="bmi-normal">Berat Badan Normal:</span> BMI 18.5 sampai 24.9</li>
+              <li><span class="bmi-overweight">Berat Badan Lebih:</span> BMI 25 sampai 29.9</li>
+              <li><span class="bmi-obese">Obesitas:</span> BMI 30 atau lebih</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bmi-calculator">
+          <h3>Hitung BMI Anda</h3>
+          <form id="bmiForm">
+            <div class="input-group">
+              <label for="height">Tinggi</label>
+              <div class="input-with-unit">
+                <input type="number" id="height" placeholder="cm" step="0.1" min="1" required>
+                <span class="unit" id="heightUnit">cm</span>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="weight">Berat</label>
+              <div class="input-with-unit">
+                <input type="number" id="weight" placeholder="kg" step="0.1" min="1" required>
+                <span class="unit" id="weightUnit">kg</span>
+              </div>
+            </div>
+            <div class="unit-toggle">
+              <label>
+                <input type="radio" name="units" value="metric" checked> Metrik (cm, kg)
+              </label>
+              <label>
+                <input type="radio" name="units" value="imperial"> Imperial (in, lbs)
+              </label>
+            </div>
+            <button type="submit" class="calculate-btn">Hitung BMI</button>
+          </form>
+          <div id="bmi-result" class="result-hidden">
+            <div class="result-value">
+              <span>BMI Anda:</span>
+              <strong id="bmi-value">0</strong>
+            </div>
+            <div id="bmi-category" class="result-category">Berat Badan Normal</div>
+            <p id="bmi-message">BMI Anda berada dalam rentang yang sehat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="reviews-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ulasan Pelanggan</h2>
+        <p class="section-tagline">Baca apa yang pelanggan katakan tentang GUSPINOVA</p>
+      </div>
+
+      <div class="reviews-container">
+        <div class="review-card" data-animation="fade-right">
+          <div class="review-image">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=80" alt="Customer drinking GUSPINOVA" class="reviewer-image">
+          </div>
+          <div class="review-content">
+            <div class="reviewer-info">
+              <h3>Dewi Kusuma</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p>"Saya telah mencoba banyak produk kesehatan, tapi GUSPINOVA benar-benar berbeda. Rasanya enak dan saya merasa lebih berenergi sepanjang hari. Sangat merekomendasikan!"</p>
+          </div>
+        </div>
+
+        <div class="review-card" data-animation="fade-up">
+          <div class="review-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Customer drinking GUSPINOVA" class="reviewer-image">
+          </div>
+          <div class="review-content">
+            <div class="reviewer-info">
+              <h3>Budi Santoso</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p>"Sebagai atlet, saya sangat peduli dengan apa yang saya konsumsi. GUSPINOVA memberikan energi yang saya butuhkan tanpa bahan-bahan berbahaya. Produk luar biasa!"</p>
+          </div>
+        </div>
+
+        <div class="review-card" data-animation="fade-left">
+          <div class="review-image">
+            <img src="https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=800&auto=format&fit=crop&q=80" alt="Customer drinking GUSPINOVA" class="reviewer-image">
+          </div>
+          <div class="review-content">
+            <div class="reviewer-info">
+              <h3>Siti Rahma</h3>
+              <div class="review-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p>"Saya mulai mengonsumsi GUSPINOVA sebulan lalu dan perbedaannya sangat terasa. Kulit saya lebih baik, energi meningkat, dan saya merasa lebih sehat secara keseluruhan."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pertanyaan Umum</h2>
+        <p class="section-tagline">Temukan jawaban untuk pertanyaan yang sering diajukan tentang GUSPINOVA</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item" id="faq-1">
+          <div class="faq-question" onclick="toggleFAQ('faq-1')">
+            <h3>Apa itu GUSPINOVA?</h3>
+            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>GUSPINOVA adalah minuman kesehatan berbasis bahan alami Indonesia yang dirancang untuk mendukung gaya hidup sehat dan aktif. Produk kami mengandung nutrisi penting yang dibutuhkan tubuh tanpa bahan pengawet atau pemanis buatan.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" id="faq-2">
+          <div class="faq-question" onclick="toggleFAQ('faq-2')">
+            <h3>Bagaimana cara mengonsumsi GUSPINOVA?</h3>
+            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Untuk serbuk GUSPINOVA, campurkan 1 sendok takar (sekitar 10 gram) dengan 200 ml air dingin atau hangat dan aduk sampai larut sempurna. Untuk hasil terbaik, konsumsi 1-2 kali sehari, pagi hari sebelum sarapan dan/atau sore hari sebelum olahraga.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" id="faq-3">
+          <div class="faq-question" onclick="toggleFAQ('faq-3')">
+            <h3>Apakah GUSPINOVA aman untuk semua orang?</h3>
+            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>GUSPINOVA dibuat dari bahan-bahan alami dan umumnya aman untuk dikonsumsi oleh orang dewasa. Namun, kami menyarankan untuk berkonsultasi dengan dokter sebelum mengonsumsi jika Anda sedang hamil, menyusui, memiliki kondisi medis tertentu, atau sedang mengonsumsi obat-obatan tertentu.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" id="faq-4">
+          <div class="faq-question" onclick="toggleFAQ('faq-4')">
+            <h3>Di mana saya bisa membeli produk GUSPINOVA?</h3>
+            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Produk GUSPINOVA tersedia di toko-toko kesehatan terpilih di seluruh Indonesia dan melalui e-commerce resmi kami. Anda juga dapat melakukan pembelian langsung melalui website resmi kami dengan pengiriman ke seluruh Indonesia.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" id="faq-5">
+          <div class="faq-question" onclick="toggleFAQ('faq-5')">
+            <h3>Apakah GUSPINOVA bisa membantu menurunkan berat badan?</h3>
+            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>GUSPINOVA dapat menjadi bagian dari program penurunan berat badan yang sehat ketika dikombinasikan dengan diet seimbang dan olahraga teratur. Kandungan nutrisinya dapat membantu meningkatkan metabolisme dan memberikan rasa kenyang lebih lama, namun tidak dirancang sebagai produk penurun berat badan instan.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" id="faq-6">
+          <div class="faq-question" onclick="toggleFAQ('faq-6')">
+            <h3>Berapa lama masa simpan produk GUSPINOVA?</h3>
+            <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Produk GUSPINOVA memiliki masa simpan hingga 18 bulan dalam kemasan tertutup jika disimpan di tempat yang sejuk dan kering. Setelah dibuka, sebaiknya disimpan dalam wadah kedap udara dan digunakan dalam waktu 3 bulan untuk hasil terbaik.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="https://images.unsplash.com/photo-1584941235291-9f12f0586577?w=150&auto=format&fit=crop&q=80" alt="Logo" class="footer-logo">
+        <h3>GUSPINOVA</h3>
+        <p>Minuman Sehat Indonesia</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Produk</h4>
+          <a href="#">Minuman Sehat</a>
+          <a href="#">Suplemen</a>
+          <a href="#">Paket Spesial</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Perusahaan</h4>
+          <a href="#about">Tentang Kami</a>
+          <a href="#">Tim Kami</a>
+          <a href="ingredient.html">Komposisi</a>
+        </div>
+      </div>
+      
+      <div class="footer-social">
+        <h4>Ikuti Kami</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 GUSPINOVA. Hak Cipta Dilindungi.</p>
+        <div class="footer-legal">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat Penggunaan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Direct inline FAQ functionality that will work regardless of other JS
+    function toggleFAQ(id) {
+      // Close all other FAQs first
+      document.querySelectorAll('.faq-item').forEach(function(item) {
+        if (item.id !== id && item.classList.contains('active')) {
+          item.classList.remove('active');
+          item.querySelector('.faq-answer').style.display = 'none';
+          item.querySelector('.faq-icon i').className = 'fas fa-chevron-down';
+        }
+      });
+      
+      // Toggle the clicked FAQ
+      const faqItem = document.getElementById(id);
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = faqItem.querySelector('.faq-icon i');
+      
+      if (faqItem.classList.contains('active')) {
+        faqItem.classList.remove('active');
+        answer.style.display = 'none';
+        icon.className = 'fas fa-chevron-down';
+      } else {
+        faqItem.classList.add('active');
+        answer.style.display = 'block';
+        icon.className = 'fas fa-chevron-up';
+      }
+    }
+    
+    // Open the first FAQ on page load
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        toggleFAQ('faq-1');
+      }, 300);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bahan Utama GUSPINOVA - Bayam, Kedelai, dan Jambu Batu</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fcfcfc;
+    }
+    
+    .ingredient-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(30,86,49,0.85) 100%), 
+                  url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=1920&auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 70vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    
+    .ingredient-hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCI+CiAgPHBhdGggZD0iTTAgMTVsMTUgMTVMMTUgMTUgMCAwem0xNSAwbDE1IDE1VjB6IiBmaWxsPSIjMWU1NjMxIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+');
+      opacity: 0.3;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      max-width: 800px;
+    }
+    
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+      background: linear-gradient(to right, #ffffff, #a7e3b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+    
+    .ingredient-section {
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .ingredient-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(180deg, #f8f8f8 0%, transparent 100%);
+      z-index: -1;
+    }
+    
+    .ingredient-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 100px;
+    }
+    
+    .ingredient-item {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+      position: relative;
+      transition: transform 0.4s ease;
+    }
+    
+    @media (min-width: 992px) {
+      .ingredient-item {
+        flex-direction: row;
+        align-items: center;
+      }
+      
+      .ingredient-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+    
+    .ingredient-image {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+      transform: translateY(0);
+      transition: all 0.5s ease;
+    }
+    
+    .ingredient-item:hover .ingredient-image {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+    }
+    
+    .ingredient-image::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(30,86,49,0.7) 0%, rgba(232,62,140,0.4) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+    }
+    
+    .ingredient-item:hover .ingredient-image::before {
+      opacity: 0.3;
+    }
+    
+    .ingredient-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      transition: transform 0.7s ease;
+    }
+    
+    .ingredient-item:hover .ingredient-image img {
+      transform: scale(1.05);
+    }
+    
+    .ingredient-content {
+      flex: 1.5;
+      padding: 30px 40px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 2;
+      transform: translateY(0);
+      transition: all 0.5s ease;
+    }
+    
+    .ingredient-item:hover .ingredient-content {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.08);
+    }
+    
+    .ingredient-title {
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .ingredient-title i {
+      color: var(--secondary);
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .ingredient-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+    
+    .nutritional-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0;
+    }
+    
+    .nutrient-item {
+      background: linear-gradient(135deg, rgba(167,227,185,0.2) 0%, rgba(30,86,49,0.1) 100%);
+      padding: 10px 18px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(167,227,185,0.3);
+    }
+    
+    .nutrient-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      background: linear-gradient(135deg, rgba(167,227,185,0.3) 0%, rgba(30,86,49,0.15) 100%);
+    }
+    
+    .nutrient-item i {
+      color: var(--primary);
+    }
+    
+    .nutrient-item span {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+    
+    .benefits-list {
+      margin-top: 25px;
+      list-style: none;
+    }
+    
+    .benefits-list li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      transition: transform 0.2s ease;
+    }
+    
+    .benefits-list li:hover {
+      transform: translateX(5px);
+    }
+    
+    .benefits-list li::before {
+      content: "\f058";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: var(--secondary);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .condition-section {
+      background-color: #f8f8f8;
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .condition-section::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(180deg, transparent, #f8f8f8);
+      z-index: 1;
+    }
+    
+    .condition-card {
+      background: white;
+      border-radius: 25px;
+      padding: 50px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .condition-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+    
+    .condition-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    }
+    
+    .condition-card h3 {
+      color: var(--primary);
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    
+    .condition-card h3 i {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, var(--primary-light), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .condition-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 25px;
+    }
+    
+    .fact-highlight {
+      background: linear-gradient(135deg, rgba(167,227,185,0.3) 0%, rgba(248,215,230,0.3) 100%);
+      border-left: 5px solid var(--secondary);
+      padding: 25px 30px;
+      margin: 30px 0;
+      border-radius: 0 15px 15px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fact-highlight::after {
+      content: "\f0eb";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      bottom: -15px;
+      right: 20px;
+      font-size: 5rem;
+      color: rgba(232,62,140,0.05);
+    }
+    
+    .fact-highlight p {
+      position: relative;
+      z-index: 2;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      
+      .condition-card {
+        padding: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .ingredient-hero {
+        min-height: 50vh;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      
+      .ingredient-section {
+        padding: 60px 0;
+      }
+      
+      .ingredient-content {
+        padding: 25px;
+      }
+      
+      .condition-section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar">
+    <div class="navbar-brand">
+      <a href="index.html" class="brand-link">
+        <img src="logoo guspinova.png" alt="Logo" class="logo">
+        <span class="brand-title">guspinova</span>
+      </a>
+    </div>
+    <div class="navbar-links" id="navbar-links">
+      <a href="index.html#about">Tentang</a>
+      <a href="index.html#products">Produk</a>
+      <a href="index.html#mascot">Maskot</a>
+      <a href="ingredient.html">Nutrisi</a>
+      <a href="research.html">Penelitian</a>
+      <a href="index.html#bmi-calculator">Kalkulator</a>
+      <a href="index.html#contact">Kontak</a>
+    </div>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Enhanced Hero section -->
+  <section class="hero ingredient-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Bahan Alami<br>GUSPINOVA</h1>
+        <p>Memanfaatkan kekuatan bayam, kedelai, dan jambu batu untuk kesehatan optimal</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction with improved styling -->
+  <section class="ingredient-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nutrisi Unggulan Kami</h2>
+        <p class="section-tagline">Mengenal bahan-bahan alami berkhasiat dalam setiap sajian GUSPINOVA</p>
+      </div>
+
+      <div class="fact-highlight">
+        <p>GUSPINOVA menghadirkan sinergi nutrisi dari tiga bahan utama yaitu Bayam, Kedelai, dan Jambu Batu yang telah terbukti secara ilmiah memiliki manfaat signifikan untuk mengatasi anemia dan obesitas. Kombinasi unik ini memberikan solusi nutrisi yang komprehensif untuk kebutuhan tubuh Anda.</p>
+      </div>
+
+      <div class="ingredient-grid">
+        <!-- Bayam Section -->
+        <div class="ingredient-item">
+          <div class="ingredient-image">
+            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&auto=format&fit=crop&q=80" alt="Bayam">
+          </div>
+          <div class="ingredient-content">
+            <h3 class="ingredient-title">
+              <i class="fas fa-leaf"></i>
+              Bayam (Spinach)
+            </h3>
+            <p>Bayam merupakan sumber nutrisi yang luar biasa dan memiliki kandungan zat besi yang tinggi, menjadikannya bahan utama yang sangat efektif dalam membantu mengatasi anemia. Selain zat besi, bayam juga kaya akan vitamin dan mineral penting lainnya.</p>
+            
+            <div class="nutritional-info">
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Zat Besi Tinggi</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Vitamin A, C, K</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Folat</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Kalsium</span>
+              </div>
+            </div>
+            
+            <h4>Manfaat untuk Kesehatan:</h4>
+            <ul class="benefits-list">
+              <li>Zat besi yang tinggi membantu pembentukan hemoglobin, mencegah dan mengatasi anemia</li>
+              <li>Serat yang tinggi membantu melancarkan pencernaan dan memberikan rasa kenyang lebih lama</li>
+              <li>Klorofil membantu detoksifikasi tubuh dan meningkatkan metabolisme</li>
+              <li>Rendah kalori namun kaya nutrisi, ideal untuk program penurunan berat badan</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Kedelai Section -->
+        <div class="ingredient-item">
+          <div class="ingredient-image">
+            <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?w=600&auto=format&fit=crop&q=80" alt="Kedelai">
+          </div>
+          <div class="ingredient-content">
+            <h3 class="ingredient-title">
+              <i class="fas fa-seedling"></i>
+              Kedelai (Soybean)
+            </h3>
+            <p>Kedelai adalah sumber protein nabati yang sangat baik dan mengandung berbagai senyawa aktif yang bermanfaat untuk kesehatan. Protein kedelai memiliki nilai biologis tinggi dan mudah diserap oleh tubuh.</p>
+            
+            <div class="nutritional-info">
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Protein Lengkap</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Isoflavon</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Asam Lemak Omega-3</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Serat Tinggi</span>
+              </div>
+            </div>
+            
+            <h4>Manfaat untuk Kesehatan:</h4>
+            <ul class="benefits-list">
+              <li>Protein berkualitas tinggi yang membantu pembentukan massa otot dan mengurangi lemak tubuh</li>
+              <li>Isoflavon membantu meningkatkan metabolisme dan membakar lemak</li>
+              <li>Serat kedelai memberikan rasa kenyang lebih lama, membantu mengontrol nafsu makan</li>
+              <li>Rendah lemak jenuh dan kolesterol, mendukung kesehatan jantung</li>
+              <li>Mengandung zat besi non-heme yang membantu mengatasi anemia</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Jambu Batu Section -->
+        <div class="ingredient-item">
+          <div class="ingredient-image">
+            <img src="https://images.unsplash.com/photo-1536511132770-e5058c7e8c46?w=600&auto=format&fit=crop&q=80" alt="Jambu Batu">
+          </div>
+          <div class="ingredient-content">
+            <h3 class="ingredient-title">
+              <i class="fas fa-apple-alt"></i>
+              Jambu Batu (Guava)
+            </h3>
+            <p>Jambu batu adalah buah yang kaya akan vitamin C dan antioksidan. Kandungan vitamin C pada jambu batu lebih tinggi dibandingkan jeruk, menjadikannya bahan yang sangat efektif untuk meningkatkan penyerapan zat besi dan mendukung kesehatan secara keseluruhan.</p>
+            
+            <div class="nutritional-info">
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Vitamin C Tinggi</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Antioksidan</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Serat</span>
+              </div>
+              <div class="nutrient-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Kalium</span>
+              </div>
+            </div>
+            
+            <h4>Manfaat untuk Kesehatan:</h4>
+            <ul class="benefits-list">
+              <li>Vitamin C tinggi membantu meningkatkan penyerapan zat besi non-heme dari bayam dan kedelai</li>
+              <li>Kandungan antioksidan membantu melindungi sel-sel darah merah dari kerusakan</li>
+              <li>Serat larut membantu mengontrol kadar gula darah dan menurunkan kolesterol</li>
+              <li>Rendah kalori namun memberikan rasa manis alami pada produk</li>
+              <li>Memiliki efek anti-inflamasi yang membantu proses metabolisme</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions section -->
+  <section class="condition-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Efektivitas Terhadap Masalah Kesehatan</h2>
+        <p class="section-tagline">Bagaimana GUSPINOVA membantu mengatasi anemia dan obesitas</p>
+      </div>
+
+      <div class="condition-card">
+        <h3><i class="fas fa-tint"></i> Mengatasi Anemia</h3>
+        <p>Anemia adalah kondisi ketika tubuh kekurangan sel darah merah atau hemoglobin yang sehat. GUSPINOVA dirancang khusus untuk membantu mengatasi anemia dengan kombinasi bahan alami yang saling melengkapi:</p>
+        
+        <div class="fact-highlight">
+          <p>Menurut penelitian, kombinasi makanan yang mengandung zat besi (seperti bayam) dengan makanan kaya vitamin C (seperti jambu batu) dapat meningkatkan penyerapan zat besi hingga 300%.</p>
+        </div>
+        
+        <h4>Cara Kerja GUSPINOVA untuk Anemia:</h4>
+        <ul class="benefits-list">
+          <li><strong>Bayam</strong> - Menyediakan zat besi yang tinggi, mineral penting untuk produksi hemoglobin</li>
+          <li><strong>Jambu Batu</strong> - Kandungan vitamin C membantu meningkatkan penyerapan zat besi dari bayam dan kedelai</li>
+          <li><strong>Kedelai</strong> - Menyumbangkan protein yang diperlukan untuk pembentukan sel darah merah yang sehat</li>
+        </ul>
+        
+        <p>Kombinasi ketiga bahan ini menciptakan sinergi nutrisi yang lebih efektif dibandingkan jika dikonsumsi secara terpisah, menjadikan GUSPINOVA pilihan tepat untuk membantu mengatasi anemia.</p>
+      </div>
+
+      <div class="condition-card">
+        <h3><i class="fas fa-weight"></i> Membantu Mengatasi Obesitas</h3>
+        <p>Obesitas adalah masalah kesehatan kronis yang berkaitan dengan kelebihan lemak tubuh. GUSPINOVA membantu mengelola berat badan dan mengatasi obesitas melalui mekanisme berikut:</p>
+        
+        <div class="fact-highlight">
+          <p>Penelitian menunjukkan bahwa makanan tinggi protein seperti kedelai dapat meningkatkan metabolisme hingga 30% dan membantu membakar kalori lebih banyak sepanjang hari.</p>
+        </div>
+        
+        <h4>Cara Kerja GUSPINOVA untuk Obesitas:</h4>
+        <ul class="benefits-list">
+          <li><strong>Kedelai</strong> - Protein nabati berkualitas tinggi meningkatkan metabolisme dan memberikan rasa kenyang lebih lama</li>
+          <li><strong>Bayam</strong> - Serat tinggi membantu mengontrol nafsu makan dan mendukung pencernaan yang sehat</li>
+          <li><strong>Jambu Batu</strong> - Antioksidan dan serat larut membantu mengontrol gula darah dan meningkatkan metabolisme</li>
+        </ul>
+        
+        <p>GUSPINOVA memberikan nutrisi yang dibutuhkan tubuh dengan kalori yang rendah, membantu Anda merasa kenyang lebih lama sambil tetap mendukung program penurunan berat badan yang sehat.</p>
+      </div>
+
+      <div class="fact-highlight">
+        <p><strong>Catatan Penting:</strong> GUSPINOVA bukanlah obat dan tidak dimaksudkan untuk mendiagnosis, mengobati, menyembuhkan, atau mencegah penyakit apa pun. GUSPINOVA merupakan minuman pendukung yang dirancang untuk melengkapi pola makan sehat dan gaya hidup aktif. Konsultasikan dengan profesional kesehatan sebelum memulai program penurunan berat badan atau jika Anda memiliki kondisi kesehatan tertentu.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="https://images.unsplash.com/photo-1584941235291-9f12f0586577?w=150&auto=format&fit=crop&q=80" alt="Logo" class="footer-logo">
+        <h3>GUSPINOVA</h3>
+        <p>Minuman Sehat Indonesia</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Produk</h4>
+          <a href="#">Minuman Sehat</a>
+          <a href="#">Suplemen</a>
+          <a href="#">Paket Spesial</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Perusahaan</h4>
+          <a href="index.html#about">Tentang Kami</a>
+          <a href="#">Tim Kami</a>
+          <a href="#">Karir</a>
+        </div>
+    
+      
+      <div class="footer-social">
+        <h4>Ikuti Kami</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 GUSPINOVA. Hak Cipta Dilindungi.</p>
+        <div class="footer-legal">
+          <a href="#">Kebijakan Privasi</a>
+          <a href="#">Syarat Penggunaan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Add scroll reveal animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const ingredientItems = document.querySelectorAll('.ingredient-item');
+      
+      // Add fade-in and slide-up animation on scroll
+      function revealOnScroll() {
+        ingredientItems.forEach(item => {
+          const itemTop = item.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (itemTop < windowHeight - 100) {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }
+        });
+      }
+      
+      // Set initial state
+      ingredientItems.forEach(item => {
+        item.style.opacity = "0";
+        item.style.transform = "translateY(50px)";
+        item.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      });
+      
+      // Listen for scroll
+      window.addEventListener('scroll', revealOnScroll);
+      
+      // Initial check
+      revealOnScroll();
+    });
+  </script>
+</body>
+</html>
