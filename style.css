@@ -104,7 +104,7 @@ section {
 }
 
 .logo {
-  height: 40px;
+  height: 200px;
   margin-right: 12px;
 }
 
@@ -1510,4 +1510,5 @@ section {
   .hero-controls {
     bottom: 12px;
   }
+
 }
